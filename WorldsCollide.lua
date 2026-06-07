@@ -5,7 +5,7 @@
 --- MOD_DESCRIPTION: A Vanilla Balanced mix of original and crossover content from iconic videogames. Features 20 Jokers, 4 Decks, and 10 Challenges.
 --- BADGE_COLOR: EB844D
 --- DISPLAY_NAME: WorldsCollide
---- VERSION: 2.3.3
+--- VERSION: 2.3.4
 --- PREFIX: collide
 
 SMODS.Atlas({
@@ -123,10 +123,10 @@ SMODS.Joker{
   loc_txt = {
     name = 'Excitebike',
         text = {
-     "This Joker gains {C:mult}+#2#{} Mult for",
-     "each {C:attention}discard{} used during",
-                    "this round, resets if {C:attention}final{}",
-                    "{C:attention}discard{} of round is used",
+     "This Joker gains {C:mult}+#2#{} Mult",
+     "for each {C:attention}discard{} used,",
+                    "resets if {C:attention}final discard{}",
+                    "of round is used",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
          }
     },
@@ -245,15 +245,15 @@ SMODS.Joker{
   loc_txt = {
     name = 'Cuphead',
         text = {
-     "This Joker gains Mult equal to {C:attention}3X{}",
+     "This Joker gains Mult equal to {C:attention}4X{}",
      "the number of {C:attention}hands{} remaining",
      "when {C:attention}Boss Blind{} is defeated",
      "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
          }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "wcjokers", pos = {x = 3, y = 3},
-    cost = 5,
+    cost = 6,
     unlocked = true,
     discovered = true,
     eternal_compat = true,
@@ -265,7 +265,7 @@ SMODS.Joker{
     end,
     calculate = function(self, card, context)
         if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and G.GAME.blind.boss and not self.gone and G.GAME.current_round.hands_left > 0 then
-           card.ability.extra.mult = card.ability.extra.mult + G.GAME.current_round.hands_left * 3
+           card.ability.extra.mult = card.ability.extra.mult + G.GAME.current_round.hands_left * 4
       return {
                 message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult } },
                 colour = G.C.FILTER,
@@ -300,7 +300,7 @@ SMODS.Joker{
     eternal_compat = false,
     blueprint_compat = true,
     perishable_compat = true,
-    config = {extra = {chips = 75}},
+    config = {extra = {chips = 70}},
     loc_vars = function(self, info_queue, card)
     return {vars = {card.ability.extra.chips,}}
  end,
@@ -650,49 +650,73 @@ SMODS.Joker{
   loc_txt = {
     name = 'Attache Case',
     text = {
-     "{C:dark_edition}+2{} Joker Slots",
+     "{C:attention}+1{} hand size,",
      "{C:attention}+1{} consumable slot",
-     "{C:green}#1# in #3#{} chance to set money to {C:money}$0{}",
-     "when any {C:attention}Booster Pack{} is opened",
          }
     },
-    rarity = 3,
+    rarity = 2,
     atlas = "wcjokers", pos = {x = 1, y = 2},
-    cost = 8,
+    cost = 6,
     unlocked = true,
     discovered = true,
     eternal_compat = true,
     blueprint_compat = false,
     perishable_compat = false,
-    config = {extra = {merchant = 1, odds = 5,}},
+    config = {extra = {h_size = 1, slots = 1,}},
     loc_vars = function(self, info_queue, card)
-    return {vars = {G.GAME.probabilities.normal or 1, card.ability.extra.merchant, card.ability.extra.odds,}}
-    end,
+         return { vars = { card.ability.extra.h_size, card.ability.extra.slots, } } 
+         end,
     add_to_deck = function(self, card, from_debuff)
-		card.ability.extra.merchant = math.floor(card.ability.extra.merchant)
-		local mod = card.ability.extra.merchant
-		 G.jokers.config.card_limit = G.jokers.config.card_limit + 2
+		 G.hand:change_size(card.ability.extra.h_size)
 		 G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
 	end,
 	remove_from_deck = function(self, card, from_debuff)
-		card.ability.extra.merchant = math.floor(card.ability.extra.merchant)
-		local mod = card.ability.extra.merchant
-		 G.jokers.config.card_limit = G.jokers.config.card_limit - 2
+		 G.hand:change_size(-card.ability.extra.h_size)
 		 G.consumeables.config.card_limit = G.consumeables.config.card_limit - 1
 	end,
     calculate = function(self, card, context)
-      if context.open_booster and not context.blueprint then
-         if pseudorandom('whatareyabuyin') < G.GAME.probabilities.normal / card.ability.extra.odds then
-          ease_dollars(-G.GAME.dollars, true)
-            return {
-                  message  = localize('k_reset'),
-                  delay = 0.65,
-                  colour = G.C.MONEY,
-                  card = card,
-            }
+        if context.ending_shop then
+          local d100 = pseudorandom(pseudoseed('summonre4merchant2'), 1, 100)
+         if d100 <= 50 then
+                return {
+		 message = "Come back anytime.",
+		 colour = G.C.PURPLE,
+		 card = card
+		       }
          end
-      end
-   end,
+         if d100 > 50 and d100 <= 100 then
+                return {
+		 message = "Hehehe Heh, Thank you!",
+		 colour = G.C.PURPLE,
+		 card = card
+		       }
+         end
+        end
+        if context.starting_shop then
+          local d100 = pseudorandom(pseudoseed('summonre4merchant'), 1, 100)
+         if d100 <= 33 then
+                return {
+		 message = "Welcome!",
+		 colour = G.C.PURPLE,
+		 card = card
+		      }
+         end
+         if d100 > 33 and d100 <= 67 then
+                return {
+	 	 message = "What're ya buyin?",
+		 colour = G.C.PURPLE,
+		 card = card
+		       }
+         end
+         if d100 > 67 and d100 <= 100 then
+                return {
+		 message = "What're ya sellin?",
+		 colour = G.C.PURPLE,
+		 card = card
+		       }
+         end
+        end
+    end,
 }
 
 SMODS.Joker{
@@ -715,7 +739,7 @@ SMODS.Joker{
     eternal_compat = false,
     blueprint_compat = true,
     perishable_compat = false,
-    config = {extra = {Xmult = 2.5, remaining = 2, pacbool = false}},
+    config = {extra = {Xmult = 2, remaining = 2, pacbool = false}},
     loc_vars = function(self, info_queue, card)
         local suit = (G.GAME.current_round.wc_pacma_suit or {}).suit or 'Spades'
         return {vars = {card.ability.extra.Xmult, card.ability.extra.remaining, localize(suit, 'suits_singular'),
@@ -815,7 +839,7 @@ SMODS.Joker{
     eternal_compat = true,
     blueprint_compat = true,
     perishable_compat = false,
-    config = {extra = {mult = 0, chips = 0, mult_gain = 1, chip_gain = 4}},
+    config = {extra = {mult = 0, chips = 0, mult_gain = 1, chip_gain = 5}},
     loc_vars = function(self, info_queue, card)
     return {vars = {card.ability.extra.mult, card.ability.extra.chips, card.ability.extra.mult_gain, card.ability.extra.chip_gain}}
   end,
@@ -1287,19 +1311,19 @@ SMODS.Back {
                     "Start run with the",
                     "{C:attention,T:v_directors_cut}#1#{} voucher",
                     "and an extra {C:money}$#2#{},",
-                    "{C:red}#3#{} Joker slot",
+                    "{C:red}#3#{} consumable slot",
                     
                     }
                 },
     atlas = 'wcdecks',
     pos = { x = 0, y = 0 },
-    config = { voucher = 'v_directors_cut', dollars = 6, joker_slot = -1 },
+    config = { voucher = 'v_directors_cut', dollars = 6, consumable_slot = -1  },
     unlocked = true,
     loc_vars = function(self, info_queue, back)
         return {
             vars = { localize { type = 'name_text', key = self.config.voucher, set = 'Voucher' },
                 self.config.dollars,
-                self.config.joker_slot,
+                self.config.consumable_slot,
             }
         }
     end,
@@ -1417,37 +1441,6 @@ SMODS.Back {
 --Challenges
 
 SMODS.Challenge{
-    loc_txt = "Bingo Party! (WC)",
-    key = 'mpevil4',
-    rules = {
-        custom = {
-        { id = 'no_reward_specific', value = 'Small' },
-        { id = 'no_reward_specific', value = 'Big' },
-        { id = 'all_eternal' },
-},
-        modifiers = {
-        {id = 'dollars',  value = 20 },
-        }
-    },
-    jokers = {
-        {id = 'j_collide_attachecase', eternal = true},
-        {id = 'j_collide_marioparty', eternal = true},
-    },
-    consumeables = {},
-    vouchers = {
-},
-    restrictions = {
-        banned_cards = {
-        {id = 'j_credit_card'},
-        {id = 'j_rocket'},
-        {id = 'j_satellite'},
-},
-        banned_tags = {},
-        banned_other = {},
-    },
-    }
-
-SMODS.Challenge{
     loc_txt = "Card Collector (WC)",
     key = 'cardcollector',
     rules = {
@@ -1496,6 +1489,43 @@ SMODS.Challenge{
         banned_tags = {},
         banned_other = {},
     },
+    }
+
+SMODS.Challenge{
+    loc_txt = "Chance Time! (WC)",
+    key = 'chancetime',
+    rules = {
+        custom = {
+        {id = 'no_reward' },
+	{id = 'no_extra_hand_money'},
+        {id = 'no_interest'},
+},
+        modifiers = {
+            {id = "dollars", value = 10},
+            {id = 'joker_slots', value = 3},
+            {id = "discards", value = 2},
+            {id = "hands", value = 3},
+        },
+},
+    jokers = {
+        {id = 'j_collide_marioparty', eternal = true},
+    },
+    consumeables = {
+},
+    vouchers = {
+},
+    restrictions = {
+        banned_cards = {
+        {id = 'j_rocket'},
+        {id = 'j_satellite'},
+},
+        banned_tags = {},
+        banned_other = {},
+    },
+    deck = {
+        type = 'Challenge Deck',
+        enhancement = 'm_lucky'
+      }
     }
 
 SMODS.Challenge{
