@@ -36,6 +36,12 @@
 <img width="882" height="462" alt="Screenshot 2026-06-21 101007" src="https://github.com/user-attachments/assets/ba9c5d59-66e9-4184-8ae2-1276a0478665" />
 
 -----
+***Challenges***
+-----
+
+<img width="570" height="726" alt="WCChallengespic2" src="https://github.com/user-attachments/assets/20c0a08c-1480-4fec-8288-4eb114f593f1" />
+
+-----
 ***Credits***
 -----
 Joker artwork and coding by me (KaviD 115)
