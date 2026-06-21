@@ -44,7 +44,7 @@
 -----
 ***Credits***
 -----
-Joker artwork and coding by me (KaviD 115)
+Artwork and coding by me (KaviD 115)
 
 ***Installation***
 -----
