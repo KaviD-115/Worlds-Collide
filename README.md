@@ -2,7 +2,7 @@
 -----
 - **20 Jokers**
 - **4 Decks**
-- **8 Stakes (New Game+ Stakes)**
+- **8 Stakes**
 - **10 Challenges**
 -----
 ***Joker Art***
@@ -29,8 +29,13 @@
 <img width="142" height="190" alt="Illusion2x" src="https://github.com/user-attachments/assets/6cc126a6-71a3-48f5-ab5e-79fddd10df13" />
 <img width="142" height="190" alt="Entropic2x" src="https://github.com/user-attachments/assets/b452adde-59d2-40f7-98f6-a50848390c41" />
 
+-----
+***Pro Stakes (New Game+ Stakes)***
+-----
 
+<img width="882" height="462" alt="Screenshot 2026-06-21 101007" src="https://github.com/user-attachments/assets/ba9c5d59-66e9-4184-8ae2-1276a0478665" />
 
+-----
 ***Credits***
 -----
 Joker artwork and coding by me (KaviD 115)
