@@ -2,6 +2,7 @@
 -----
 - **20 Jokers**
 - **4 Decks**
+- **8 Stakes (New Game+ Stakes)**
 - **10 Challenges**
 -----
 ***Joker Art***
