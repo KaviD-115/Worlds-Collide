@@ -2,10 +2,10 @@
 --- MOD_NAME: Worlds Collide
 --- MOD_ID: WorldsCollide
 --- MOD_AUTHOR: [KaviD]
---- MOD_DESCRIPTION: A Vanilla Balanced mix of original and crossover content from iconic videogames. Features 20 Jokers, 4 Decks, and 10 Challenges.
+--- MOD_DESCRIPTION: A Vanilla Balanced mix of original and crossover content from iconic videogames. Features 20 Jokers, 4 Decks, 8 Stakes, and 10 Challenges.
 --- BADGE_COLOR: EB844D
 --- DISPLAY_NAME: WorldsCollide
---- VERSION: 2.3.5
+--- VERSION: 2.4.0
 --- PREFIX: collide
 
 SMODS.Atlas({
@@ -34,6 +34,20 @@ SMODS.Atlas({
     path = "WorldsCollideDecks.png", 
     px = 71,
     py = 95,
+})
+
+SMODS.Atlas({
+    key = 'wcstakes',
+    path = 'chips.png',
+    px = '29',
+    py = '29'
+})
+
+SMODS.Atlas({
+    key = 'wcstickers',
+    path = 'stickers.png',
+    px = 71,
+    py = 95
 })
 
 --Jokers
@@ -427,7 +441,7 @@ SMODS.Joker{
     eternal_compat = true,
     blueprint_compat = true,
     perishable_compat = false,
-    config = {extra = {Xmult_add = 0.10, Xmult = 1}},
+    config = {extra = {Xmult_add = 0.15, Xmult = 1}},
     loc_vars = function(self, info_queue, card)
     return {vars = {card.ability.extra.Xmult_add, card.ability.extra.Xmult}}
   end,
@@ -1781,4 +1795,191 @@ SMODS.Challenge{
                 { id = "bl_window", type = "blind"},
       }
     },
+}
+
+--Stakes
+
+SMODS.Stake {
+    loc_txt = {
+        name = "White Stake Pro (WC)",
+        text = {
+            "{C:attention}+1{} Ante required to win",
+            "{s:0.8,}Previous Stakes don't apply{}",
+               }
+    },  
+    key = "white_pro",
+    above_stake = "gold",
+    unlocked_stake = "red_pro",
+    applied_stakes = {},
+    atlas = 'wcstakes',
+    pos = {x = 0, y = 0},
+    sticker_pos = {x = 1, y = 0},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.win_ante = (G.GAME.win_ante or 8) + 1
+    end,
+    colour = G.C.WHITE,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Red Stake Pro (WC)",
+        text = {
+            "{C:attention}Boss Blind{} gives",
+            "no reward money",
+               }
+    },
+    key = "red_pro",
+    above_stake = "white_pro",
+    unlocked_stake = "green_pro",
+    applied_stakes = {"white_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 1, y = 0},
+    sticker_pos = {x = 2, y = 0},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.modifiers.no_blind_reward = G.GAME.modifiers.no_blind_reward or {}
+        G.GAME.modifiers.no_blind_reward.Boss = true
+    end,
+    colour = G.C.RED,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Green Stake Pro (WC)",
+        text = {
+            "Required score scales",
+            "{C:attention}even faster{} for each {C:attention}Ante",
+            "{C:inactive,s:0.8}Equal to vanilla Purple Stake's scaling",
+               }
+    },
+    key = "green_pro",
+    above_stake = "red_pro",
+    unlocked_stake = "black_pro",
+    applied_stakes = {"red_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 2, y = 0},
+    sticker_pos = {x = 3, y = 0},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 2
+    end,
+    colour = G.C.GREEN,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Black Stake Pro (WC)",
+        text = {
+            "Shop can have {C:attention}Rental{} Jokers",
+            "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
+               }
+    },
+    key = "black_pro",
+    above_stake = "green_pro",
+    unlocked_stake = "blue_pro",
+    applied_stakes = {"green_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 4, y = 0},
+    sticker_pos = {x = 0, y = 1},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.modifiers.enable_rentals_in_shop = true
+    end,
+    colour = G.C.BLACK,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Blue Stake Pro (WC)",
+        text = {
+            "Start with {C:money}$3{} less",
+               }
+    },
+    key = "blue_pro",
+    above_stake = "black_pro",
+    unlocked_stake = "purple_pro",
+    applied_stakes = {"black_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 3, y = 0},
+    sticker_pos = {x = 4, y = 0},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.starting_params.dollars = G.GAME.starting_params.dollars - 3
+    end,
+    colour = G.C.BLUE,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Purple Stake Pro (WC)",
+        text = {
+            "Shop can have {C:attention}Eternal{}", 
+            "and {C:attention}Perishable{} Jokers",
+            "{C:inactive,s:0.8}(Can't be sold or destroyed)",
+            "{C:inactive,s:0.8}(Debuffed after 5 Rounds)",
+               }
+    },
+    key = "purple_pro",
+    above_stake = "blue_pro",
+    unlocked_stake = "orange_pro",
+    applied_stakes = {"blue_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 0, y = 1},
+    sticker_pos = {x = 1, y = 1},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.modifiers.enable_eternals_in_shop = true
+        G.GAME.modifiers.enable_perishables_in_shop = true
+    end,
+    colour = G.C.PURPLE,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Orange Stake Pro (WC)",
+        text = {
+            "Shop {C:attention}Rerolls{} start at {C:money}$7{}",
+               }
+    },
+    key = "orange_pro",
+    above_stake = "purple_pro",
+    unlocked_stake = "gold_pro",
+    applied_stakes = {"purple_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 1, y = 1},
+    sticker_pos = {x = 2, y = 1},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.starting_params.reroll_cost = G.GAME.starting_params.reroll_cost + 2
+    end,
+    colour = G.C.ORANGE,
+}
+
+SMODS.Stake {
+    loc_txt = {
+        name = "Gold Stake Pro (WC)",
+        text = {
+            "{C:attention}+1{} Ante required to win",
+               }
+    },
+    key = "gold_pro",
+    above_stake = "orange_pro",
+    applied_stakes = {"orange_pro"},
+    atlas = 'wcstakes',
+    pos = {x = 3, y = 1},
+    sticker_pos = {x = 3, y = 1},
+    sticker_atlas = 'wcstickers',
+    shiny = true,
+    modifiers = function()
+        G.GAME.win_ante = (G.GAME.win_ante or 9) + 1
+    end,
+    colour = G.C.GOLD,
 }
