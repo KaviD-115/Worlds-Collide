@@ -7,20 +7,27 @@
 -----
 ***Joker Art***
 ----- 
-<img width="142" height="190" alt="JimReaper2xUpdate" src="https://github.com/user-attachments/assets/42dd6f1d-9211-460a-b8ba-1940ab59b404" /> <img width="142" height="190" alt="SixAndStones2xUpdate" src="https://github.com/user-attachments/assets/b68d225d-6728-4932-8225-5ea44808d3d2" />
-<img width="142" height="190" alt="SoaringSevens2xUpdate" src="https://github.com/user-attachments/assets/6fd2d7fa-f95b-40d2-96c3-684e2fe8e561" />
-![TheLemnisc8JokerArtplus](https://github.com/user-attachments/assets/9bab7b90-4d8e-4a9f-b33e-1afc9137f5b7) <img width="142" height="240" alt="PSA10JokerArtDisp" src="https://github.com/user-attachments/assets/97a45f5c-cf4a-424d-9fb7-88d99813b5e5" /> 
-<img width="142" height="190" alt="Plumber2xUpdate" src="https://github.com/user-attachments/assets/584280b5-4035-4b7c-a3c0-67b7fa4b1906" />
-<img width="142" height="190" alt="CottonCandy2x" src="https://github.com/user-attachments/assets/9e832730-5318-46a0-8675-911adc85286a" />
-<img width="142" height="190" alt="WildWest2x" src="https://github.com/user-attachments/assets/53a65df8-6368-4140-bc09-9ef65d030ec8" />
-<img width="142" height="190" alt="Dagonet2xUpdate" src="https://github.com/user-attachments/assets/311ebefe-c4e4-477a-9150-1e2f2ef57a1c" />
-<img width="142" height="190" alt="GoldenPickaxe2xUpdate" src="https://github.com/user-attachments/assets/0b89e89f-e9c6-4721-a4f6-29a8919e044b" />
-<img width="142" height="190" alt="Raygun2xUpdate" src="https://github.com/user-attachments/assets/f8cf554d-4147-4e04-85cb-4949c588a5d5" />
-![MegaManXJokerArt62X](https://github.com/user-attachments/assets/b20d55f4-6ba7-4ba2-97de-09ca3fdb35dc) <img width="142" height="190" alt="AttacheCase2x" src="https://github.com/user-attachments/assets/d0fe3a64-1de9-4bd6-bfb6-9b84bab3cb84" /> <img width="142" height="190" alt="Octane2xUpdate" src="https://github.com/user-attachments/assets/801e1eab-633e-42a9-9e4b-a4ebe1473782" /> <img width="142" height="190" alt="VaultBoy2xUpdate" src="https://github.com/user-attachments/assets/5774f272-bd57-4e34-ab33-d35b86a00bd7" /> <img width="142" height="190" alt="Rupees2x" src="https://github.com/user-attachments/assets/c4ca2459-94f6-494a-98ca-fce31f41d47e" />
-<img width="142" height="190" alt="PacMan2xUpdate" src="https://github.com/user-attachments/assets/d7e10a6d-d2bf-417b-a310-26ab666a1c91" />
-<img width="142" height="190" alt="MarioPartyJokerArt" src="https://github.com/user-attachments/assets/5f2de06c-83bd-4f27-b8ad-88dfa2dbb54c" /> <img width="142" height="190" alt="Cuphead2xUpdate" src="https://github.com/user-attachments/assets/e0d845dd-d7ec-4013-85ce-5e53a8a5fca3" />
-<img width="142" height="190" alt="ExcitebikeJokerArt" src="https://github.com/user-attachments/assets/52fa798a-2941-450d-9d99-b0e961f36e33" />
-<img width="142" height="190" alt="Red Blue2x" src="https://github.com/user-attachments/assets/2dcf9c3b-c8f5-4c66-879a-b1a6b9e4baa0" />
+<img width="142" height="240" alt="PSA10JokerArtDisp" src="https://github.com/user-attachments/assets/312c9aa6-fd12-47e7-a4e9-858c2df4ecc5" />
+<img width="142" height="190" alt="ExcitebikeJokerArt2x" src="https://github.com/user-attachments/assets/a72908ec-80a2-4764-b862-5467f636476a" />
+<img width="142" height="190" alt="Rupees2x" src="https://github.com/user-attachments/assets/dc97ebd4-1a02-478e-8ba6-8286210347e4" />
+<img width="142" height="190" alt="SixAndStones2xUpdate" src="https://github.com/user-attachments/assets/eb61be04-693e-4f3f-824a-b5007fec100e" />
+<img width="142" height="190" alt="Cuphead2xUpdate" src="https://github.com/user-attachments/assets/88beedef-1e6e-48ae-af4c-16009d819587" />
+<img width="142" height="190" alt="Octane2xUpdate" src="https://github.com/user-attachments/assets/440dd269-8106-48c1-8935-fe05c1307458" />
+<img width="142" height="190" alt="SoaringSevens2xUpdate" src="https://github.com/user-attachments/assets/21bd8c80-d151-4f39-931d-733951ba36bd" />
+<img width="142" height="190" alt="JimReaper2xUpdate" src="https://github.com/user-attachments/assets/90f925fc-e5db-47d6-acf5-ef3903962039" />
+<img width="142" height="190" alt="Raygun2xUpdate" src="https://github.com/user-attachments/assets/b64049e4-cb5e-4620-bff4-2ce1e496d1fe" />
+<img width="142" height="190" alt="GoldenPickaxe2xUpdate" src="https://github.com/user-attachments/assets/cf4b4031-7e1c-4e69-9f5c-80f9dcebbf2a" />
+<img width="142" height="190" alt="VaultBoy2xUpdate" src="https://github.com/user-attachments/assets/c89f10a1-c806-4788-a661-fd66bc6dc395" />
+<img width="142" height="190" alt="CottonCandy2x" src="https://github.com/user-attachments/assets/4c468140-c155-4200-b7d1-c3388a525297" />
+<img width="142" height="190" alt="PacMan2xUpdate" src="https://github.com/user-attachments/assets/68286d88-3847-4bc5-9b57-5e0d0a8c648e" />
+<img width="142" height="190" alt="AttacheCase2x" src="https://github.com/user-attachments/assets/cde9a3e2-3a45-4121-9ef1-8a4d1deed839" />
+<img width="142" height="190" alt="Red Blue2x" src="https://github.com/user-attachments/assets/c1a47316-6618-45ad-9f1f-b643845e374d" />
+<img width="142" height="190" alt="Plumber2xUpdate" src="https://github.com/user-attachments/assets/471ddbe9-6a90-4331-b1b0-6c6df3b88803" />
+<img width="142" height="190" alt="MegaManXJokerArt62X" src="https://github.com/user-attachments/assets/4d928f74-4912-413a-b033-9ce12a599e4a" />
+<img width="142" height="190" alt="MarioPartyJoker2x" src="https://github.com/user-attachments/assets/b82dad40-a8a1-4e4c-ac10-12704767dc38" />
+<img width="142" height="190" alt="TheLemnisc8Joker2x" src="https://github.com/user-attachments/assets/d1060dc6-d1fc-49e1-ab6d-d79713185253" />
+<img width="142" height="190" alt="WildWest2x" src="https://github.com/user-attachments/assets/3eb0b9d4-220b-4adf-99e5-b85d3b3c98e0" />
+<img width="142" height="190" alt="Dagonet2xUpdate" src="https://github.com/user-attachments/assets/a06de531-7c24-4c40-bda2-dfcf37de8868" />
 
 -----
 ***Deck Art***
