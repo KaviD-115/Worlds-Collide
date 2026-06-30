@@ -5,7 +5,7 @@
 --- MOD_DESCRIPTION: A Vanilla Balanced mix of original and crossover content from iconic videogames. Features 21 Jokers, 6 Decks, 8 Stakes, and 10 Challenges.
 --- BADGE_COLOR: 465F85
 --- DISPLAY_NAME: WorldsCollide
---- VERSION: 2.5.0
+--- VERSION: 2.5.1
 --- PREFIX: collide
 
 SMODS.Atlas({
@@ -113,6 +113,7 @@ SMODS.Joker{
                             c:add_to_deck()
                             G.consumeables:emplace(c)
                             G.GAME.consumeable_buffer = 0
+                            card_eval_status_text(card,'extra',nil, nil, nil,{message = "+1 Aura", colour = G.C.SECONDARY_SET.Spectral, instant = true})
                             return true 
                         end}))
                  }
@@ -126,6 +127,7 @@ SMODS.Joker{
                             c:add_to_deck()
                             G.consumeables:emplace(c)
                             G.GAME.consumeable_buffer = 0
+                            card_eval_status_text(card,'extra',nil, nil, nil,{message = "+1 Wheel of Fortune", colour = G.C.SECONDARY_SET.Tarot, instant = true})
                             return true 
                         end})) 
                 }              
